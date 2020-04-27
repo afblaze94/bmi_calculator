@@ -1,3 +1,4 @@
+import 'package:bmicalculator/screens/historyPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmicalculator/components/icon_content.dart';
@@ -29,6 +30,20 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () async {
+                  await Navigator.of(context).push(MaterialPageRoute(builder: (context) => HistoryPage()));
+                },
+                child: Icon(
+                  Icons.message,
+                  size: 26.0,
+                ),
+              )
+          ),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

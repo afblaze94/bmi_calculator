@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1079639057493",
+    "firebase_url": "https://dsc-demo-d7410.firebaseio.com",
+    "project_id": "dsc-demo-d7410",
+    "storage_bucket": "dsc-demo-d7410.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079639057493:android:b653edb61a14858c7420dc",
+        "android_client_info": {
+          "package_name": "com.example.bmicalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079639057493-ta7ghdglq6osbde9qpc8jqrbtdco0e26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhq8o8BzVdNRb1dVeFZAWLdEIP0CjYifQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079639057493-ta7ghdglq6osbde9qpc8jqrbtdco0e26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

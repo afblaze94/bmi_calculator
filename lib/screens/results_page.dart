@@ -1,3 +1,5 @@
+import 'package:bmicalculator/screens/welcome.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:bmicalculator/constants.dart';
 import 'package:bmicalculator/components/reusable_card.dart';
@@ -59,9 +61,34 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           BottomButton(
-            buttonTitle: 'RE-CALCULATE',
+            buttonTitle: 'Save',
             onTap: () {
-              Navigator.pop(context);
+              final _firestore = Firestore.instance;
+              _firestore.collection('history').add({
+                'userEmail': email,
+                'bmi': bmiResult,
+                'date': DateTime.now().year.toString() + (DateTime.now().month.toString().length == 2? DateTime.now().month.toString(): '0' + DateTime.now().month.toString()) + (DateTime.now().day.toString().length == 2? DateTime.now().day.toString(): '0' + DateTime.now().day.toString()),
+              });
+
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                        title: Text('BMI saved'),
+                        content: FlatButton(
+                          child: Text(
+                              'Ok', textScaleFactor: 1.1,
+                              style: TextStyle(
+                                color: Color(0xFFFFA4FF),
+                              )
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        )
+                    );
+                  }
+              );
             },
           )
         ],
